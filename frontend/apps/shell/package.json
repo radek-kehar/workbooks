@@ -1,0 +1,15 @@
+{
+  "name": "workbooks-fe-shell",
+  "private": true,
+  "version": "1.0.0-SNAPSHOT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && cross-env vite build --mode development",
+    "preview": "vite preview",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "test": "vitest --run --passWithNoTests",
+    "test:watch": "vitest",
+    "analyze-build": "vite build && start generated/bundle-stats.html"
+  }
+}

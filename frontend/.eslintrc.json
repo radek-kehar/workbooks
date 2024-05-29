@@ -1,0 +1,146 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "check-file",
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/jsx-runtime",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "@core/*"
+            ],
+            "message": "Please use @core instead."
+          },
+          {
+            "group": [
+              "react"
+            ],
+            "importNames": [
+              "default"
+            ],
+            "message": "Please use named imports."
+          }
+        ]
+      }
+    ],
+    "curly": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "**/*.{js,ts}": "CAMEL_CASE",
+        "**/*.{jsx,tsx}": "PASCAL_CASE"
+      },
+      {
+        "ignoreMiddleExtensions": true
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "unnamedComponents": "function-expression"
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "debug",
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "config": {
+          "theme": {
+            "colors": {},
+            "fontSize": {},
+            "fontWeight": {},
+            "cursor": {}
+          }
+        }
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "apps/*/src/**/*.d.ts",
+    "apps/*/dist/*",
+    "libs/*/src/**/*.d.ts"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "libs/core/**/*"
+      ],
+      "rules": {
+        "tailwindcss/no-custom-classname": [
+          "warn",
+          {
+            "config": {
+              "theme": {
+                "colors": {},
+                "fontSize": {},
+                "fontWeight": {},
+                "cursor": {}
+              }
+            }
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "react"
+                ],
+                "importNames": [
+                  "default"
+                ],
+                "message": "Please use named imports."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

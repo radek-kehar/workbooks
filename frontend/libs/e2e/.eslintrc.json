@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/jsx-runtime",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "cypress/no-unnecessary-waiting": "off"
+  },
+  "ignorePatterns": [
+    "src/**/*.d.ts",
+    "dist/*"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
