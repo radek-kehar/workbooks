@@ -1,12 +1,15 @@
 import { AppInfo } from '@core/context/models/appName';
+import {APP_CONFIG} from "@core/config/constants/appConfigContstant";
 import { To } from 'react-router-dom';
+
+const ROOT_URL = APP_CONFIG.app.rootUrl;
 
 export abstract class AbstractRoute {
   readonly appInfo: AppInfo;
   readonly path: string;
   constructor(appInfo: AppInfo, path: string) {
     this.appInfo = appInfo;
-    this.path = appInfo.pathPrefix + path;
+    this.path = `${ROOT_URL}${appInfo.pathPrefix}${path}`;
   }
 
   isApp(appInfo: AppInfo): boolean {

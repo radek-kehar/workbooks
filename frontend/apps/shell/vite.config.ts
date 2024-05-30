@@ -7,7 +7,7 @@ export default ({ mode }) =>
   createViteConfig({
     mode: mode,
     app: 'shell',
-    base: '/',
+    base: '',
     host: '127.0.0.1',
     port: 5173,
     rootDir: resolve(__dirname),

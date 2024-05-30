@@ -5,6 +5,8 @@ import {resolve} from 'path';
 import {createViteProxy} from './createViteProxy';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+export const ROOT_URL = 'workbooks/';
+
 // todo: provazat s frontend/libs/core/src/context/models/appName.ts?
 export type APPS_TYPE = 'shell';
 
@@ -33,9 +35,10 @@ export function createViteConfig({ mode, app, base, host, port, rootDir, version
   process.env['VITE_APP_NAME'] = app;
   process.env['VITE_APP_VERSION'] = version;
   process.env['VITE_APP_DIST'] = dist;
+  process.env['VITE_APP_ROOT_URL'] = ROOT_URL;
 
   return defineConfig({
-    base: base,
+    base: `/${ROOT_URL}${base}`,
     server: {
       host: host,
       port: port,

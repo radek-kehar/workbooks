@@ -9,6 +9,7 @@ export class AppConfigViteLoader extends AppConfigLoader {
       app: {
         name: this.string(import.meta.env.VITE_APP_NAME),
         version: this.string(import.meta.env.VITE_APP_VERSION),
+        rootUrl: this.string(import.meta.env.VITE_APP_ROOT_URL)
       },
       toggles: {
         //
