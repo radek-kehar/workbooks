@@ -49,6 +49,10 @@ export function createViteConfig({ mode, app, base, host, port, rootDir, version
       port: port,
       proxy: app === 'shell' ? LOCAL_APP_PROXY : {},
     },
+    build: {
+      outDir: `../../dist/${app}`,
+      emptyOutDir: true,
+    },
     plugins: [
       react(),
       tsconfigPaths(),
