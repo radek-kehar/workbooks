@@ -1,4 +1,4 @@
-import {Link, LinkProps} from 'react-router-dom';
+import {Link, LinkProps, useHref} from 'react-router-dom';
 import {ForwardedRef, forwardRef, MouseEvent} from 'react';
 import {useIsPathOutsideApp} from '@core/router/hooks/useIsPathOutsideApp';
 import {useAppNavigate} from "@core/router/hooks/useAppNavigate";
@@ -11,8 +11,8 @@ export const AppLink = forwardRef(function AppLink(
 ) {
   const navigate = useAppNavigate();
   const isPathOutsideApp = useIsPathOutsideApp();
-
-  reloadDocument = reloadDocument || isPathOutsideApp(to);
+  const href = useHref(to, { relative: other.relative });
+  reloadDocument = reloadDocument || isPathOutsideApp(href);
 
   function handleClick(event: MouseEvent<HTMLAnchorElement>): void {
     if (reloadDocument) {
