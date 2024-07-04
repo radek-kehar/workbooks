@@ -41,8 +41,8 @@ jobs:
       - name: Build
         working-directory: ./frontend
         run: npm run build
-      - name: Move 404.html
-        run: mv ./frontend/dist/404/index.html ./frontend/dist/404.html
+      - name: Move Shell App
+        run: mv ./frontend/dist/shell/ ./frontend/dist/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
