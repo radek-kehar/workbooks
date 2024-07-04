@@ -1,11 +1,10 @@
-import { useAppInfo } from '@core/context/hooks/useAppInfo';
-import { AppRoute } from '@core/router/models/route';
+import {useAppInfo} from "@core/context/hooks/useAppInfo";
 
 export interface IsPathOutsideAppFunction {
-  (route: AppRoute): boolean;
+  (path: string): boolean;
 }
 
 export function useIsPathOutsideApp(): IsPathOutsideAppFunction {
-  const currentApp = useAppInfo();
-  return (route: AppRoute): boolean => !route.isApp(currentApp);
+  const currentAppInfo = useAppInfo();
+  return (path: string): boolean => !path.startsWith(`${currentAppInfo.pathPrefix}/`);
 }

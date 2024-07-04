@@ -1,5 +1,5 @@
-import { BasePageLayout } from '@core/layout/components/BasePageLayout';
-import { useTranslations } from '@core/i18n/i18n';
+import {BasePageLayout} from '@core/layout/components/BasePageLayout';
+import {useTranslations} from '@core/i18n/i18n';
 
 export function NotFoundPage() {
   const { t } = useTranslations('core');

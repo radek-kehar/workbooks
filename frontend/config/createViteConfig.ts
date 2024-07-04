@@ -1,14 +1,12 @@
-import {defineConfig, loadEnv} from 'vite';
+import {defineConfig, loadEnv, ProxyOptions} from 'vite';
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path';
-// @ts-ignore
-import {createViteProxy} from './createViteProxy';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export const ROOT_URL = 'workbooks/';
+export const ROOT_URL = '/workbooks';
 
 // todo: provazat s frontend/libs/core/src/context/models/appName.ts?
-export type APPS_TYPE = 'shell';
+export type APPS_TYPE = 'shell' | 'profile';
 
 export interface CreateViteConfigInit {
   mode: string;
@@ -18,6 +16,13 @@ export interface CreateViteConfigInit {
   port: number;
   rootDir: string;
   version: string;
+}
+
+const LOCAL_APP_PROXY: Record<string, string | ProxyOptions> = {
+  [`${ROOT_URL}/profile/`]: {
+    target: 'http://127.0.0.1:5174',
+    changeOrigin: true,
+  },
 }
 
 export function loadAppEnv(mode: string): Record<string, string> {
@@ -38,11 +43,11 @@ export function createViteConfig({ mode, app, base, host, port, rootDir, version
   process.env['VITE_APP_ROOT_URL'] = ROOT_URL;
 
   return defineConfig({
-    base: `/${ROOT_URL}${base}`,
+    base: `${ROOT_URL}${base}`,
     server: {
       host: host,
       port: port,
-      proxy: createViteProxy({app}),
+      proxy: app === 'shell' ? LOCAL_APP_PROXY : {},
     },
     plugins: [
       react(),

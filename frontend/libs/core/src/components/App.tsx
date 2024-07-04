@@ -1,9 +1,9 @@
-import { I18nextProvider } from 'react-i18next';
-import { AppInfo } from '@core/context/models/appName';
-import { AppContextProvider } from '@core/context/utils/appContext';
-import { ToastProvider } from '@core/components/ToastProvider';
-import { i18nInstance } from '@core/i18n/i18n';
-import { Outlet } from 'react-router';
+import {I18nextProvider} from 'react-i18next';
+import {AppInfo} from '@core/context/models/appName';
+import {AppContextProvider} from '@core/context/utils/appContext';
+import {ToastProvider} from '@core/components/ToastProvider';
+import {i18nInstance} from '@core/i18n/i18n';
+import {Outlet} from 'react-router';
 
 export interface AppProps {
   appInfo: AppInfo;

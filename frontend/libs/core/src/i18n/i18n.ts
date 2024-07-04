@@ -1,8 +1,8 @@
-import i18next, { TOptions as I18nTOptions } from 'i18next';
-import { I18nOptions } from '@core/i18n/models/i18nOptions';
-import { FormatUtils } from '@core/utils/formatUtils';
-import { useState } from 'react';
-import { initReactI18next } from 'react-i18next';
+import i18next, {TOptions as I18nTOptions} from 'i18next';
+import {I18nOptions} from '@core/i18n/models/i18nOptions';
+import {FormatUtils} from '@core/utils/formatUtils';
+import {useState} from 'react';
+import {initReactI18next} from 'react-i18next';
 
 const SUPPORTED_LANGUAGES = ['cs', 'en'];
 

@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
-import { AppConfigLoader } from '@core/config/services/appConfigLoader';
-import { AppConfig } from '@core/config/models/appConfig';
+import {AppConfigLoader} from '@core/config/services/appConfigLoader';
+import {AppConfig} from '@core/config/models/appConfig';
 
 export class AppConfigViteLoader extends AppConfigLoader {
   loadConfig(): AppConfig {

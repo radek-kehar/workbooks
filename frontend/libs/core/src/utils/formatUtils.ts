@@ -1,4 +1,4 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, {Dayjs} from 'dayjs';
 
 export class FormatUtils {
   /**

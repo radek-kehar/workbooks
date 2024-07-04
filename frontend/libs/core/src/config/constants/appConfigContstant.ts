@@ -1,5 +1,5 @@
-import { AppConfigLoader } from '@core/config/services/appConfigLoader';
-import { AppConfigViteLoader } from '@core/config/services/appConfigViteLoader';
+import {AppConfigLoader} from '@core/config/services/appConfigLoader';
+import {AppConfigViteLoader} from '@core/config/services/appConfigViteLoader';
 
 const loader: AppConfigLoader = new AppConfigViteLoader();
 

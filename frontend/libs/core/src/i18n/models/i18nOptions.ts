@@ -1,4 +1,4 @@
-import { Resource } from 'i18next';
+import {Resource} from 'i18next';
 
 export interface I18nOptions {
   /** Used to add translations from individual projects */

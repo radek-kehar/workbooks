@@ -1,10 +1,9 @@
-import { AbstractRoute } from '@core/router/models/route';
-import { AppEnum } from '@core/context/models/appName';
+type Route = { [key: string]: string };
 
-export class ShellRoute extends AbstractRoute {
-  static readonly INDEX = new ShellRoute('/');
+export const ShellRoute: Route = {
+  INDEX: '/workbooks/'
+} as const;
 
-  constructor(url: string) {
-    super(AppEnum.SHELL, url);
-  }
-}
+export const ProfileRoute: Route = {
+  INDEX: '/workbooks/profile/'
+} as const;

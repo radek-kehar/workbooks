@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'react';
-import { AppContext } from '@core/context/models/appContext';
+import {createContext, useContext} from 'react';
+import {AppContext} from '@core/context/models/appContext';
 
 const context = createContext<AppContext>(null!);
 
